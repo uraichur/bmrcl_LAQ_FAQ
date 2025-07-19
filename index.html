@@ -24,18 +24,20 @@
       color: white;
       padding: 1rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      text-align: center;
     }
 
     header img {
       height: 50px;
+      margin-bottom: 0.5rem;
     }
 
     header h1 {
       margin: 0;
       font-size: 1.5rem;
+      line-height: 1.4;
     }
 
     .language-toggle {
@@ -59,14 +61,31 @@
       background-color: #e0e0e0;
       padding: 1rem;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     nav a {
-      margin: 0 1rem;
       text-decoration: none;
       color: var(--primary-color);
       font-weight: bold;
       cursor: pointer;
+      padding: 0.5rem 1rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      nav a {
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 5px;
+        margin: 0.25rem 0;
+      }
     }
 
     main {
@@ -132,12 +151,6 @@
     .show-kn [lang="en"] {
       display: none;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.2rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -160,10 +173,10 @@
 
   <main id="faq-container">
     <section id="land-acquisition" class="faq-section">
-      <h2><span lang="en">Land Acquisition – Frequently Asked Questions</span><span lang="kn">ಭೂಸ್ವಾಧೀನ – ಸಾಮಾನ್ಯವಾಗಿ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು</span></h2>
+      <h2>Land Acquisition – Frequently Asked Questions</h2>
       <div class="faq-item">
-        <button onclick="toggleAnswer(this)"><span lang="en">What is the process of land acquisition under BMRCL?</span></button>
-        <div class="answer"><span lang="en">Land acquisition is conducted as per the RFCTLARR Act, 2013.</span></div>
+        <button onclick="toggleAnswer(this)">What is the process of land acquisition under BMRCL?</button>
+        <div class="answer">Land acquisition is conducted as per the RFCTLARR Act, 2013.</div>
       </div>
       <div class="faq-item">
         <button onclick="toggleAnswer(this)">How will I be notified?</button>
@@ -180,7 +193,7 @@
     </section>
 
     <section id="rr" class="faq-section" style="display:none">
-      <h2><span lang="en">Rehabilitation & Resettlement – FAQs</span></h2>
+      <h2>Rehabilitation & Resettlement – FAQs</h2>
       <div class="faq-item">
         <button onclick="toggleAnswer(this)">What R&R benefits are provided?</button>
         <div class="answer">Compensation, housing support, and shifting assistance based on eligibility.</div>
@@ -200,7 +213,7 @@
     </section>
 
     <section id="sem" class="faq-section" style="display:none">
-      <h2><span lang="en">Social & Environmental Management – FAQs</span></h2>
+      <h2>Social & Environmental Management – FAQs</h2>
       <div class="faq-item">
         <button onclick="toggleAnswer(this)">What is done to manage environmental risks?</button>
         <div class="answer">Environmental Management Plans (EMP) are implemented for each phase.</div>
@@ -220,7 +233,7 @@
     </section>
 
     <section>
-      <h2><span lang="en">Contact Our Officers for Assistance</span></h2>
+      <h2>Contact Our Officers for Assistance</h2>
       <div class="contact-card">
         <strong>Name:</strong> Mr. Lakshmanan<br />
         <strong>Designation:</strong> Thasildhar – Phase 3 (North Zone)<br />
@@ -238,7 +251,7 @@
     </section>
 
     <section>
-      <h2><span lang="en">More</span></h2>
+      <h2>More</h2>
       <ul>
         <li><a href="#">Download Forms</a></li>
         <li><a href="#">Useful Data</a></li>
