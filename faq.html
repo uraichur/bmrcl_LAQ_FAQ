@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMRCL Phase 3 - LAQ & R&R FAQs</title>
+  <style>
+    :root {
+      --primary-color: #800080; /* Purple */
+      --accent-color: #008000;  /* BMRCL Green */
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .language-toggle {
+      text-align: right;
+      padding: 0.5rem 1rem;
+      background: #eee;
+    }
+
+    .language-toggle button {
+      margin-left: 0.5rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    nav {
+      background-color: #e0e0e0;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin: 2rem 0;
+    }
+
+    h2 {
+      color: var(--primary-color);
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item button {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 0.75rem;
+      width: 100%;
+      text-align: left;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 5px;
+    }
+
+    .faq-item .answer {
+      display: none;
+      background: white;
+      padding: 0.75rem;
+      border-left: 3px solid var(--accent-color);
+    }
+
+    .contact-card {
+      background: white;
+      padding: 1rem;
+      border-left: 5px solid var(--primary-color);
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    [lang="kn"] {
+      display: none;
+    }
+
+    .show-kn [lang="kn"] {
+      display: inline;
+    }
+
+    .show-kn [lang="en"] {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="bmrcl_logo.png" alt="BMRCL Logo" />
+    <h1><span lang="en">Phase 3 – Land Acquisition & R&R FAQs</span><span lang="kn">ಹಂತ-3 – ಭೂಸ್ವಾಧೀನ ಮತ್ತು ಪುನರ್ವಸತಿ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></h1>
+  </header>
+
+  <div class="language-toggle">
+    <span lang="en">Language:</span><span lang="kn">ಭಾಷೆ:</span>
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('kn')">ಕನ್ನಡ</button>
+  </div>
+
+  <nav>
+    <a onclick="showSection('land-acquisition')"><span lang="en">Land Acquisition FAQs</span><span lang="kn">ಭೂಸ್ವಾಧೀನ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
+    <a onclick="showSection('rr')"><span lang="en">Rehabilitation & Resettlement FAQs</span><span lang="kn">ಪುನರ್ವಸತಿ ಮತ್ತು ಪುನಸ್ಥಾಪನೆ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
+    <a onclick="showSection('sem')"><span lang="en">Social & Environmental Management FAQs</span><span lang="kn">ಸಾಮಾಜಿಕ ಮತ್ತು ಪರಿಸರ ನಿರ್ವಹಣಾ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
+  </nav>
+
+  <main id="faq-container">
+    <section id="land-acquisition" class="faq-section">
+      <h2><span lang="en">Land Acquisition – Frequently Asked Questions</span><span lang="kn">ಭೂಸ್ವಾಧೀನ – ಸಾಮಾನ್ಯವಾಗಿ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು</span></h2>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)"><span lang="en">What is the process of land acquisition under BMRCL?</span></button>
+        <div class="answer"><span lang="en">Land acquisition is conducted as per the RFCTLARR Act, 2013.</span></div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">How will I be notified?</button>
+        <div class="answer">You will receive official communication through the revenue department.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">Can I raise objections?</button>
+        <div class="answer">Yes, you may raise objections within the stipulated time during notification phase.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">What documents are required?</button>
+        <div class="answer">You will need ownership proof, ID, and bank details for compensation disbursal.</div>
+      </div>
+    </section>
+
+    <section id="rr" class="faq-section" style="display:none">
+      <h2><span lang="en">Rehabilitation & Resettlement – FAQs</span></h2>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">What R&R benefits are provided?</button>
+        <div class="answer">Compensation, housing support, and shifting assistance based on eligibility.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">Who qualifies for R&R?</button>
+        <div class="answer">Eligibility is based on displacement status and legal ownership or tenancy.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">How is compensation calculated?</button>
+        <div class="answer">As per the notified guidance value, structure value, and policy framework.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">When will I receive support?</button>
+        <div class="answer">Support is extended at time of award or just before physical displacement.</div>
+      </div>
+    </section>
+
+    <section id="sem" class="faq-section" style="display:none">
+      <h2><span lang="en">Social & Environmental Management – FAQs</span></h2>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">What is done to manage environmental risks?</button>
+        <div class="answer">Environmental Management Plans (EMP) are implemented for each phase.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">Are local communities consulted?</button>
+        <div class="answer">Yes, public consultations are a key part of our planning and impact mitigation.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">Is air and noise pollution addressed?</button>
+        <div class="answer">Mitigation includes dust suppression, low-noise equipment, and scheduling work hours.</div>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleAnswer(this)">What about tree protection?</button>
+        <div class="answer">Tree felling is minimized, and compensatory plantation is ensured as per law.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span lang="en">Contact Our Officers for Assistance</span></h2>
+      <div class="contact-card">
+        <strong>Name:</strong> Mr. Lakshmanan<br />
+        <strong>Designation:</strong> Thasildhar – Phase 3 (North Zone)<br />
+        <strong>Phone:</strong> <br />
+        <strong>Email:</strong> <br />
+        <strong>Office:</strong> BMRCL Acquisition Office, MG Road Bengaluru 
+      </div>
+      <div class="contact-card">
+        <strong>Name:</strong> Mr. Chandramouli<br />
+        <strong>Designation:</strong> Thasildhar – Phase 3 (South Zone)<br />
+        <strong>Phone:</strong> <br />
+        <strong>Email:</strong> <br />
+        <strong>Office:</strong> BMRCL Acquisition Office, MG Road, Bengaluru
+      </div>
+    </section>
+
+    <section>
+      <h2><span lang="en">More</span></h2>
+      <ul>
+        <li><a href="#">Download Forms</a></li>
+        <li><a href="#">Useful Data</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 BMRCL. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleAnswer(btn) {
+      const answer = btn.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.faq-section');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function setLanguage(lang) {
+      if (lang === 'kn') {
+        document.body.classList.add('show-kn');
+      } else {
+        document.body.classList.remove('show-kn');
+      }
+    }
+  </script>
+</body>
+</html>
