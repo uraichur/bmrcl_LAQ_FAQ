@@ -6,8 +6,8 @@
   <title>BMRCL Phase 3 - LAQ & R&R FAQs</title>
   <style>
     :root {
-      --primary-color: #800080; /* Purple */
-      --accent-color: #008000;  /* BMRCL Green */
+      --primary-color: #800080;
+      --accent-color: #008000;
       --bg-color: #f9f9f9;
       --text-color: #333;
     }
@@ -140,95 +140,120 @@
       padding: 1rem;
     }
 
-    [lang="kn"] {
-      display: none;
-    }
+    
+    .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
 
-    .show-kn [lang="kn"] {
-      display: inline;
-    }
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
-    .show-kn [lang="en"] {
-      display: none;
+    @media (max-width: 600px) {
+      .gallery-grid img {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="bmrcl_logo.png" alt="BMRCL Logo" />
-    <h1><span lang="en">Phase 3 – Land Acquisition, R&R, & SEM FAQs</span><span lang="kn">ಹಂತ-3 – ಭೂಸ್ವಾಧೀನ ಮತ್ತು ಪುನರ್ವಸತಿ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></h1>
+    <h1><span lang="en">Phase 3 – Land Acquisition, R&R, & SEM FAQs</span></h1>
   </header>
 
-  <div class="language-toggle">
-    <span lang="en">Language:</span><span lang="kn">ಭಾಷೆ:</span>
-    <button onclick="setLanguage('en')">English</button>
-    <button onclick="setLanguage('kn')">ಕನ್ನಡ</button>
-  </div>
-
-  <nav>
-    <a onclick="showSection('land-acquisition')"><span lang="en">Land Acquisition FAQs</span><span lang="kn">ಭೂಸ್ವಾಧೀನ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
-    <a onclick="showSection('rr')"><span lang="en">Rehabilitation & Resettlement FAQs</span><span lang="kn">ಪುನರ್ವಸತಿ ಮತ್ತು ಪುನಸ್ಥಾಪನೆ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
-    <a onclick="showSection('sem')"><span lang="en">Social & Environmental Management FAQs</span><span lang="kn">ಸಾಮಾಜಿಕ ಮತ್ತು ಪರಿಸರ ನಿರ್ವಹಣಾ ಎಫ್‌ಎಕ್ಸ್ಕ್ಯೂಗಳು</span></a>
+    <nav>
+    <a onclick="showSection('laq-rr')">Land Acquisition & R&R</a>
+    <a onclick="showSection('sem')">Social & Environmental Management</a>
+    <a onclick="showSection('gallery')">Gallery</a>
   </nav>
 
   <main id="faq-container">
-    <section id="land-acquisition" class="faq-section">
-      <h2>Land Acquisition – Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">What is the process of land acquisition under BMRCL?</button>
-        <div class="answer">Land acquisition is conducted as per the KIAD Act, 1966.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">How will I be notified?</button>
-        <div class="answer">You will receive official communication through the revenue department.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">Can I raise objections?</button>
-        <div class="answer">Yes, you may raise objections within the stipulated time during notification phase.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">What documents are required?</button>
-        <div class="answer">You will need ownership proof, ID, and bank details for compensation disbursal.</div>
-      </div>
-    </section>
+    <section id="laq-rr" class="faq-section">
+      <h2>Land Acquisition and Compensation – Frequently Asked Questions (FAQs)</h2>
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Under which Act is the land acquisition and notification process being carried out?</button><div class="answer">The land acquisition and notification process is being undertaken under the provisions of the Karnataka Industrial Areas Development Act (KIADA). Preliminary notifications are issued under Section 28(1) of the Act for the identified properties along the project alignment. Final notifications are issued under Section 28(4) in a phased manner, following detailed scrutiny and field verification.
+A comprehensive list of notified properties, including survey numbers, extent of land, and the purpose of acquisition, is available on the official website of Bangalore Metro Rail Corporation Limited (BMRCL) and is periodically updated.
+</div></div>
 
-    <section id="rr" class="faq-section" style="display:none">
-      <h2>Rehabilitation & Resettlement – FAQs</h2>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">What R&R benefits are provided?</button>
-        <div class="answer">Compensation, housing support, and shifting assistance based on eligibility.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">Who qualifies for R&R?</button>
-        <div class="answer">Eligibility is based on displacement status and legal ownership or tenancy.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">How is compensation calculated?</button>
-        <div class="answer">As per the notified guidance value, structure value, and policy framework.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">When will I receive support?</button>
-        <div class="answer">Support is extended at time of award or just before physical displacement.</div>
-      </div>
+      <div class="faq-item"><button onclick="toggleAnswer(this)">What methodology is followed for calculating compensation?</button><div class="answer">Compensation is calculated in accordance with the provisions of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 (RFCTLARR Act) and the guidelines of KIADA. There is having a one-man committee to determine land value.  The methodology considers:
+Market value (based on recent sale transactions in the vicinity),Government guidance value,Additional entitlements including:
+100% Solatium on the market value,
+12% annual interest from the date of preliminary notification to the date of the final award,
+Other applicable allowances.
+</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Will displaced residents be eligible for rehabilitation or resettlement?</button><div class="answer">Yes, displaced residents will be provided rehabilitation and resettlement (R&R) assistance as per applicable government norms and the BMRCL CRP-2019 policy. This includes relocation assistance and, in certain cases, support for restoration of livelihood.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">What is the process for filing objections or appeals?</button><div class="answer">Objections must be submitted in writing to the Special Land Acquisition Officer (SLAO) at the relevant KIADB regional office within 30 days of receiving the preliminary notification. For guidance, affected individuals may also approach the BMRCL Land Acquisition Cell.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">How can property owners access notification details?</button><div class="answer">Property owners will receive individual communication through the KIADB. Additionally, notifications will be published in leading Kannada and English newspapers, and details will be available on the BMRCL website.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Timeline for land acquisition and construction?</button><div class="answer">The Bangalore Metro Rail Corporation Limited (BMRCL) anticipates that all land acquisition activities will be completed by the year 2026. Construction work for the project will commence only after the complete possession of the required land and the disbursement of compensation to affected parties. This ensures compliance with legal provisions and minimizes disruption to property owners.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Notice period before demolition?</button><div class="answer">All landowners and tenants affected by the project will be issued a minimum of 30 days’ notice prior to any demolition or requirement to vacate the premises. This notice period is intended to provide adequate time for individuals and families to make necessary relocation arrangements.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Acquisition of partially affected properties?</button><div class="answer">In situations where only a portion of a property is acquired and the remaining portion becomes unusable, BMRCL will acquire the entire property, including the unusable portion. This action will be taken in accordance with the Compensation and Resettlement Policy (CRP), 2019, ensuring fair treatment and compensation for property owners.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Where can grievances be submitted?</button><div class="answer">Affected individuals may submit any objections, concerns, or grievances related to land acquisition to either of the following:
+BMRCL Land Acquisition Office or Grievance Redressal Committee (GRC).These bodies are responsible for reviewing and resolving such matters in a transparent and timely manner.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Will structures and trees be compensated?</button><div class="answer">Compensation will be provided for all structures and trees located on acquired land, in accordance with the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement (LARR) Act, 2013. The compensation package includes:
+Land Compensation – Assessed and recommended by the BMRCL-appointed One-Man Committee.
+Building Valuation – Conducted by an independent, third-party valuation agency to ensure objectivity.
+Resettlement and Rehabilitation (R&R) Assistance – Provided as per the BMRCL CRP-2019 policy.
+Tree Valuation – Carried out by the Forest Department, based on species, age, and market value.
+</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Discrepancies in survey numbers?</button><div class="answer">If there are any discrepancies in land measurements or survey numbers, affected individuals may submit a formal representation to the BMRCL Land Section. The Land Section, in coordination with the Engineering Section, will verify the accuracy of the information and take corrective action as necessary.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Who demolishes acquired structures?</button><div class="answer">The responsibility for the demolition of all acquired buildings lies entirely with BMRCL. Property owners and tenants will not be required to undertake or finance any demolition activities.
+</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">What about utilities in partially acquired buildings?</button><div class="answer">In instances where only part of a building is acquired, BMRCL will be responsible for the relocation of all associated utilities, including:
+Electrical cables and meters, Water supply connections, Sanitary and other service lines. This ensures continuity of service and minimizes inconvenience to occupants.
+</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Are tenants eligible for Compensation &  R&R assitance?</button><div class="answer">Tenants who are displaced due to land acquisition are eligible for Resettlement and Rehabilitation (R&R) assistance, subject to verification, in line with the provisions of CRP-2019. This includes financial assistance and relocation support, depending on tenure and documentation.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Tenants without agreements—are they eligible?</button><div class="answer">Tenants without a formal rental agreement may still be eligible for R&R assistance. In such cases, BMRCL will assess alternative supporting documents as listed in the official notice issued to tenants. Tenants are encouraged to submit any of the following:Informal or notarized rental agreements, Utility bills in the tenant’s name, Any other documents, indicating duration, and nature of occupancy.This verification process is necessary to ensure fair and transparent distribution of benefits.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Is a rental agreement required?</button><div class="answer">Tenants are advised to maintain a valid and current rental or renewal agreement, even if informal. A list of required documents for verification and processing of R&R assistance is included in the notice issued by BMRCL. Submitting these documents promptly will help avoid delays in the disbursement of benefits.
+</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">How are grievances addressed?</button><div class="answer">To ensure smooth implementation of the project and to avoid delays, a dedicated Grievance Redressal Committee (GRC) has been constituted. This committee is tasked with addressing public complaints and concerns promptly. Detailed information about the GRC, including its composition, functions, and contact details, will be shared during public consultation meetings and is available at the BMRCL office.
+</div></div>
+
     </section>
 
     <section id="sem" class="faq-section" style="display:none">
       <h2>Social & Environmental Management – FAQs</h2>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">What is done to manage environmental risks?</button>
-        <div class="answer">Environmental Management Plans (EMP) are implemented for each phase.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">Are local communities consulted?</button>
-        <div class="answer">Yes, public consultations are a key part of our planning and impact mitigation.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">Is air and noise pollution addressed?</button>
-        <div class="answer">Mitigation includes dust suppression, low-noise equipment, and scheduling work hours.</div>
-      </div>
-      <div class="faq-item">
-        <button onclick="toggleAnswer(this)">What about tree protection?</button>
-        <div class="answer">Tree felling is minimized, and compensatory plantation is ensured as per law.</div>
+
+     <div class="faq-item"><button onclick="toggleAnswer(this)">What is done to manage environmental risks?</button><div class="answer">Environmental Management Plans (EMP) are implemented for each phase.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Are local communities consulted?</button><div class="answer">Yes, public consultations are a key part of our planning and impact mitigation.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">Is air and noise pollution addressed?</button><div class="answer">Mitigation includes dust suppression, low-noise equipment, and scheduling work hours.</div></div>
+
+      <div class="faq-item"><button onclick="toggleAnswer(this)">What about tree protection?</button><div class="answer">Tree felling is minimized, and compensatory plantation is ensured as per law.</div></div>
+
+
+    </section>
+
+    <section id="gallery" class="faq-section" style="display:none">
+      <h2>Gallery</h2>
+      <p>Photos from project events and consultations:</p>
+      <div class="gallery-grid">
+        <img src="gallery/event1.jpg" alt="Event 1" />
+        <img src="gallery/event2.jpg" alt="Event 2" />
+        <img src="gallery/event3.jpg" alt="Event 3" />
+	<img src="gallery/event4.jpg" alt="Event 4" />
+
       </div>
     </section>
 
@@ -237,15 +262,11 @@
       <div class="contact-card">
         <strong>Name:</strong> Mr. Lakshmanan<br />
         <strong>Designation:</strong> Thasildhar – Phase 3 (North Zone)<br />
-        <strong>Phone:</strong> <br />
-        <strong>Email:</strong> <br />
-        <strong>Office:</strong> BMRCL Land Acquisition Office, MG Road Bengaluru 
+        <strong>Office:</strong> BMRCL Land Acquisition Office, MG Road Bengaluru
       </div>
       <div class="contact-card">
         <strong>Name:</strong> Mr. Chandramouli<br />
         <strong>Designation:</strong> Thasildhar – Phase 3 (South Zone)<br />
-        <strong>Phone:</strong> <br />
-        <strong>Email:</strong> <br />
         <strong>Office:</strong> BMRCL Land Acquisition Office, MG Road, Bengaluru
       </div>
     </section>
@@ -266,6 +287,10 @@
   <script>
     function toggleAnswer(btn) {
       const answer = btn.nextElementSibling;
+      const allAnswers = document.querySelectorAll('.faq-item .answer');
+      allAnswers.forEach(a => {
+        if (a !== answer) a.style.display = 'none';
+      });
       answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
     }
 
@@ -275,13 +300,8 @@
       document.getElementById(sectionId).style.display = 'block';
     }
 
-    function setLanguage(lang) {
-      if (lang === 'kn') {
-        document.body.classList.add('show-kn');
-      } else {
-        document.body.classList.remove('show-kn');
-      }
-    }
+   
+    window.onload = () => showSection('laq-rr');
   </script>
 </body>
 </html>
